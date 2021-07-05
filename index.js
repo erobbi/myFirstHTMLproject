@@ -19,12 +19,12 @@ function addDiv() {
 
 let buttonRemove = document.querySelector('#buttonRemove');
 buttonRemove.onclick = function() {console.log("thanks for clicking remove me");}
-buttonRemove.addEventListener("click", removeDiv()); // having issues here
+buttonRemove.addEventListener("click", removeDiv); // having issues here
 
 function removeDiv() {
     console.log("thanks, let's destroy that div");
-    block =document.removeDiv();
-    container_block = document.getElementById( 'addToMe' );
+    block =document.removeChild('#addToMe');
+    //container_block = document.getElementById( 'addToMe' );
 }
 
 //alert("js works")

@@ -11,9 +11,8 @@ function logSubmit(event) {
     let i;
     for (i = 0; i < formText.length ;i++) {
       textElement += formText.elements[i].value + "<br>";
-    }
-    document.getElementById("demo").innerHTML = textElement;
-    // src: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements
+    }// src: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements
+    document.getElementById("submissions").innerHTML = textElement;
 }
 form.addEventListener('submit', logSubmit);
 
@@ -36,8 +35,9 @@ buttonRemove.addEventListener("click", removeDiv); // having issues here
 
 function removeDiv() {
     console.log("thanks, let's destroy that div");
-    let removeMe = document.getElementById('#iExist');
-    removeMe.remove();
+    let removeMe = document.getElementById('addToMe');
+    let iExist = document.getElementById('iExist')
+    removeMe.removeChild(iExist);
 }
 
 //alert("js works")

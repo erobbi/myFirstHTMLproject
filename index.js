@@ -1,10 +1,23 @@
-let form = document.querySelector("#form")
-console.log(form);
-form.onsubmit = function(event) { // on submit
-    if (!isFormVolid(this)) {
-        event.preventDefault(); // prevent form submission if form is not valit
+const form = document.querySelector("#form")
+console.log(form); // form structure does appear
+
+function logSubmit(event) {
+    log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+    event.preventDefault(); // stop page refresh
+    console.log('hi there, here is what you submitted');
+    let formText = document.getElementById("form");
+    console.log(formText.fname)
+    let textElement = "";
+    let i;
+    for (i = 0; i < formText.length ;i++) {
+      textElement += formText.elements[i].value + "<br>";
     }
+    document.getElementById("demo").innerHTML = textElement;
+    // src: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements
 }
+form.addEventListener('submit', logSubmit);
+
+
 
 let buttonAdd = document.querySelector('#buttonAdd');
 buttonAdd.onclick = function() {console.log("thanks for clicking me");}
@@ -23,8 +36,8 @@ buttonRemove.addEventListener("click", removeDiv); // having issues here
 
 function removeDiv() {
     console.log("thanks, let's destroy that div");
-    block =document.removeChild('#addToMe');
-    //container_block = document.getElementById( 'addToMe' );
+    let removeMe = document.getElementById('#iExist');
+    removeMe.remove();
 }
 
 //alert("js works")

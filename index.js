@@ -50,21 +50,6 @@ function removeiExist() {
     removeMe.removeChild(iExist);
 }
 
-let buttonRemoveDiv = document.querySelector('#buttonRemoveDiv');
-console.log(buttonRemoveDiv)
-buttonRemoveDiv.onClick = function() {removeDiv}
-// {
-//     console.log("thanks for clicking remove div")
-//     buttonRemoveDiv.addEventListener("click", removeiExist);
-// }
-
-function removeDiv() {
-    console.log("thanks, let's destroy div you created");
-    //let removeMe = document.getElementById('addToMe');
-   // removeMe.removeChild(removeMe.lastElementChild);
-  //  console.log(removeMe.lastElementChild)
-}
-
 let buttonChangePageColor = document.querySelector('#changePageColor')
 buttonChangePageColor.onclick = 
 function changeBackgroundColor() {

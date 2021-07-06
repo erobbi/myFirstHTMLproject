@@ -24,7 +24,11 @@ function addDiv() {
     //console.log("thanks again, here's a new div for you")
     let block = document.createElement('div');
     let buttonDiv = document.createElement('button')
+    buttonDiv.addEventListener('click',(e) => {
+        document.querySelector('#addToMe').removeChild(e.target.parentElement)
+    })
     buttonDiv.innerText = "x"
+
     // buttonDiv.class = "Remove Button"
     //console.log(buttonDiv)
     
@@ -56,10 +60,9 @@ buttonRemoveDiv.onClick = function() {removeDiv}
 
 function removeDiv() {
     console.log("thanks, let's destroy div you created");
-    let removeMe = document.getElementById('addToMe');
-    let divTag = document.getElementsByTagName('div')
+    //let removeMe = document.getElementById('addToMe');
    // removeMe.removeChild(removeMe.lastElementChild);
-    console.log(removeMe.lastElementChild)
+  //  console.log(removeMe.lastElementChild)
 }
 
 let buttonChangePageColor = document.querySelector('#changePageColor')
@@ -68,7 +71,10 @@ function changeBackgroundColor() {
     console.log("thanks for clicking change background color")
     bodyObject = document.querySelector('body')
     let colors = ['#ff0000', '#00ff00', '#0000ff'];
-    let random_color = colors[Math.floor(Math.random() * colors.length)];
+    //let random_color = colors[Math.floor(Math.random() * colors.length)];
+    let random_color = () => colors[Math.floor(Math.random() * colors.length)];
+    bodyObject.style.background = random_color()
+    bodyObject.style.color = random_color()
     console.log(random_color)
     // src: https://stackoverflow.com/questions/14984643/css-pick-a-random-color-from-array
 }

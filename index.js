@@ -29,15 +29,25 @@ function addDiv() {
     container_block.appendChild( block ); 
  }
 
-let buttonRemove = document.querySelector('#buttonRemove');
-buttonRemove.onclick = function() {console.log("thanks for clicking remove me");}
-buttonRemove.addEventListener("click", removeDiv); // having issues here
+let buttonRemoveiExist = document.querySelector('#buttonRemoveiExist');
+buttonRemoveiExist.onclick = function() {console.log("thanks for removing Descartes' sense of self");}
+buttonRemoveiExist.addEventListener("click", removeiExist);
 
-function removeDiv() {
-    console.log("thanks, let's destroy that div");
+function removeiExist() {
+    console.log("thanks, let's destroy statement");
     let removeMe = document.getElementById('addToMe');
     let iExist = document.getElementById('iExist')
     removeMe.removeChild(iExist);
 }
 
-//alert("js works")
+let buttonRemoveDiv = document.querySelector('#buttonRemoveDiv');
+buttonRemoveDiv.onclick = function() {console.log("thanks for clicking remove div")}
+buttonRemoveDiv.addEventListener("click", removeiExist);
+
+
+function removeDiv() {
+    console.log("thanks, let's destroy div you created");
+    let removeMe = document.getElementById('addToMe');
+    let divTag = document.getElementsByTagName('div')
+    removeMe.removeChild(divTag);
+}

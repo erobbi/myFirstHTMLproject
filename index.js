@@ -21,18 +21,19 @@ let buttonAdd = document.querySelector('#buttonAdd');
 //buttonAdd.onclick = function() {console.log("thanks for clicking me");}
 buttonAdd.addEventListener("click", addDiv);
 function addDiv() {
-    console.log("thanks again, here's a new div for you")
-    block = document.createElement('div');
-    buttonDiv = document.createElement('button')
-    buttonDiv.innerText = "Remove"
+    //console.log("thanks again, here's a new div for you")
+    let block = document.createElement('div');
+    let buttonDiv = document.createElement('button')
+    buttonDiv.innerText = "x"
     // buttonDiv.class = "Remove Button"
-    console.log(buttonDiv)
-    block.append(buttonDiv)
-    console.log(block)
+    //console.log(buttonDiv)
+    
+    //console.log(block)
     block.textContent = "you made me!";
-    console.log(block)
-    container_block = document.getElementById( 'addToMe' );
+   // console.log(block)
+    let container_block = document.getElementById( 'addToMe' );
     container_block.appendChild(block); 
+    block.appendChild(buttonDiv)
  }
 
 let buttonRemoveiExist = document.querySelector('#buttonRemoveiExist');
@@ -46,7 +47,8 @@ function removeiExist() {
 }
 
 let buttonRemoveDiv = document.querySelector('#buttonRemoveDiv');
-buttonRemoveDiv.onclick = function() {removeDiv}
+console.log(buttonRemoveDiv)
+buttonRemoveDiv.onClick = function() {removeDiv}
 // {
 //     console.log("thanks for clicking remove div")
 //     buttonRemoveDiv.addEventListener("click", removeiExist);
@@ -56,7 +58,8 @@ function removeDiv() {
     console.log("thanks, let's destroy div you created");
     let removeMe = document.getElementById('addToMe');
     let divTag = document.getElementsByTagName('div')
-    removeMe.removeChild(divTag);
+   // removeMe.removeChild(removeMe.lastElementChild);
+    console.log(removeMe.lastElementChild)
 }
 
 let buttonChangePageColor = document.querySelector('#changePageColor')
